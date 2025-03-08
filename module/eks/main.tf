@@ -8,7 +8,7 @@
 # }
 
 # Fetching the existing VPC using its ID
-data "aws_vpc" "environment_vpc"{
+data "aws_vpc" "EKS-Vpc"{
     id = var.vpc_id
 }
 
