@@ -245,12 +245,12 @@ resource "aws_eks_node_group" "eks-node-group"{
         Name = var.worker_nodes_name
     }
     scaling_config {
-      desired_size = 2
-      max_size = 6
-      min_size = 1
+      desired_size = var.desired_size
+      max_size = var.max_size
+      min_size = var.min_size
     }
     update_config {
-      max_unavailable = 1
+      max_unavailable = var.max_unavailable
     }
 
     depends_on = [ 

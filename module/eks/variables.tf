@@ -138,6 +138,34 @@ variable "eks_cluster_name" {
   default     = "eks-cluster"
 }
 
+# Desired Instances for EKS Worker Nodes
+variable "desired_size" {
+  description = "The desired number of instances for the EKS worker nodes."
+  type        = number
+  default = 2
+}
+
+# Minimum Instances for EKS Worker Nodes
+variable "min_size" {
+  description = "Minimum number of instances"
+  type        = number
+  default = 1
+}
+
+# Maximum  Instances for EKS Worker Nodes
+variable "max_size" {
+  description = "Maximum number of instances for the EKS worker Nodes"
+  type        = number
+  default = 3
+}
+
+# Maximum Instances should be available during upgrades
+variable "max_unavailable" {
+    description = "Maximum number of instances that can be unavailable during upgrades."
+    type        = number
+    default = 1
+}
+
 # Instance type for EKS Worker Nodes
 variable "worker_instance_type" {
   description = "The EC2 instance type to use for the worker nodes in the EKS Node Group. Example: 't3.medium'."
